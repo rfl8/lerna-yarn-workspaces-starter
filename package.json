@@ -1,0 +1,54 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-react": "^7.10.1",
+    "@storybook/react": "^5.3.19",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^26.0.1",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-styled-components": "^1.10.7",
+    "eslint": "^7.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.21.1",
+    "eslint-plugin-jest": "^23.13.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "jest": "^26.0.1",
+    "jest-haste-map": "^26.0.1",
+    "jest-resolve": "^26.0.1",
+    "jest-styled-components": "^7.0.2",
+    "lerna": "^3.22.0",
+    "prettier": "^2.0.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-test-renderer": "^16.13.1",
+    "styled-components": "^5.1.1",
+    "webpack": "^4.43.0"
+  },
+  "scripts": {
+    "bootstrap": "lerna bootstrap --use-workspaces",
+    "build": "lerna exec --parallel -- babel --root-mode upward src -d lib --ignore **/*.stories.js,**/*.spec.js",
+    "clean": "lerna clean --yes",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "lint": "yarn eslint -c .eslintrc.js --ext .js packages/**",
+    "lint:fix": "yarn eslint -c .eslintrc.js --ext .js packages/** --fix",
+    "storybook": "start-storybook -p 5555"
+  },
+  "dependencies": {
+    "lint-staged": "^10.2.9"
+  },
+  "lint-staged": {
+    "*": "your-cmd"
+  }
+}
