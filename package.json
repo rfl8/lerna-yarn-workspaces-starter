@@ -33,7 +33,7 @@
     "react-dom": "^16.13.1",
     "react-test-renderer": "^16.13.1",
     "styled-components": "^5.1.1",
-    "webpack": "^4.43.0"
+    "webpack": "^5.94.0"
   },
   "scripts": {
     "bootstrap": "lerna bootstrap --use-workspaces",
